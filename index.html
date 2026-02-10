@@ -3,12 +3,122 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Perpustakaan Personal - Nadila Ananda</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Perpustakaan Rahma Tazkya</title>
+    <style>
+        /* Palet warna perpustakaan: Netral, klasik, dengan aksen coklat untuk kesan hangat dan tenang */
+        body {
+            font-family: 'Georgia', serif; /* Font klasik untuk perpustakaan */
+            margin: 0;
+            padding: 0;
+            background-color: #F5F5DC; /* Beige lembut */
+            color: #2F4F4F; /* Dark slate gray untuk teks utama */
+            line-height: 1.6;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #2F4F4F; /* Header gelap */
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .owner-name {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #F5F5DC; /* Kontras dengan header */
+        }
+
+        nav {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .nav-btn {
+            background-color: transparent;
+            border: none;
+            color: #F5F5DC;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, transform 0.2s ease; /* Hover interaktif */
+        }
+
+        .nav-btn:hover {
+            background-color: #8B4513; /* Saddle brown aksen */
+            transform: scale(1.05);
+        }
+
+        .nav-btn.active {
+            background-color: #8B4513;
+        }
+
+        main {
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        h1, h2, h3 {
+            color: #2F4F4F;
+        }
+
+        .book-grid {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .book-item {
+            background-color: #ECF0F1; /* Light gray untuk kartu */
+            border-radius: 8px;
+            padding: 1rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease; /* Animasi modern */
+            width: 200px;
+        }
+
+        .book-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .book-item img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+
+        /* Responsif untuk mobile */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+            nav {
+                margin-top: 1rem;
+            }
+            .book-grid {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
-        <div class="owner-name">Nadila Ananda</div>
+        <div class="owner-name">Nama Pemilik</div>
         <nav>
             <button class="nav-btn active" data-tab="beranda">Beranda</button>
             <button class="nav-btn" data-tab="koleksi">Koleksi</button>
@@ -19,116 +129,46 @@
     
     <main>
         <section id="beranda" class="tab-content active">
-            <div class="content-wrapper">
-                <div class="main-content">
-                    <h1>Selamat Datang di Perpustakaan Personal</h1>
-                    <p>Deskripsi website: Ini adalah perpustakaan pribadi yang berisi koleksi buku favorit saya. Temukan inspirasi dan pengetahuan di sini. Website ini terinspirasi dari desain pribadi yang sederhana dan elegan.</p>
-                    <div class="highlight">
-                        <h2>Highlight Koleksi</h2>
-                        <div class="book-grid">
-                            <div class="book-item">
-                                <img src="https://via.placeholder.com/150x200?text=Buku+1" alt="Buku 1">
-                                <h3>Judul Buku 1</h3>
-                                <p>Penulis: Nama Penulis</p>
-                            </div>
-                            <div class="book-item">
-                                <img src="https://via.placeholder.com/150x200?text=Buku+2" alt="Buku 2">
-                                <h3>Judul Buku 2</h3>
-                                <p>Penulis: Nama Penulis</p>
-                            </div>
-                            <div class="book-item">
-                                <img src="https://via.placeholder.com/150x200?text=Buku+3" alt="Buku 3">
-                                <h3>Judul Buku 3</h3>
-                                <p>Penulis: Nama Penulis</p>
-                            </div>
-                        </div>
+            <h1>Selamat Datang di Perpustakaan Rahma Tazkya</h1>
+            <p>Deskripsi website: Ini adalah perpustakaan pribadi yang berisi koleksi buku favorit saya. Temukan inspirasi dan pengetahuan di sini.</p>
+            <div class="highlight">
+                <h2>Highlight Koleksi</h2>
+                <div class="book-grid">
+                    <div class="book-item">
+                        <img src="placeholder-book1.jpg" alt="Buku 1">
+                        <h3>Judul Buku 1</h3>
+                        <p>Penulis: Nama Penulis</p>
+                    </div>
+                    <div class="book-item">
+                        <img src="placeholder-book2.jpg" alt="Buku 2">
+                        <h3>Judul Buku 2</h3>
+                        <p>Penulis: Nama Penulis</p>
+                    </div>
+                    <div class="book-item">
+                        <img src="placeholder-book3.jpg" alt="Buku 3">
+                        <h3>Judul Buku 3</h3>
+                        <p>Penulis: Nama Penulis</p>
                     </div>
                 </div>
-                <aside class="sidebar">
-                    <h3>Koleksi Terbaru</h3>
-                    <ul>
-                        <li><a href="#">Buku Terbaru 1</a></li>
-                        <li><a href="#">Buku Terbaru 2</a></li>
-                        <li><a href="#">Buku Terbaru 3</a></li>
-                    </ul>
-                    <h3>Kategori</h3>
-                    <ul>
-                        <li><a href="#">Fiksi</a></li>
-                        <li><a href="#">Non-Fiksi</a></li>
-                        <li><a href="#">Biografi</a></li>
-                    </ul>
-                </aside>
             </div>
         </section>
         
         <section id="koleksi" class="tab-content">
-            <div class="content-wrapper">
-                <div class="main-content">
-                    <h1>Koleksi Buku</h1>
-                    <p>Daftar lengkap koleksi buku saya. Klik untuk detail lebih lanjut.</p>
-                    <div class="book-grid full">
-                        <!-- Tambahkan lebih banyak item buku di sini -->
-                        <div class="book-item">
-                            <img src="https://via.placeholder.com/150x200?text=Buku+4" alt="Buku 4">
-                            <h3>Judul Buku 4</h3>
-                            <p>Penulis: Nama Penulis</p>
-                        </div>
-                        <!-- Lanjutkan -->
-                    </div>
-                </div>
-                <aside class="sidebar">
-                    <h3>Pencarian</h3>
-                    <input type="text" placeholder="Cari buku...">
-                    <h3>Tag Populer</h3>
-                    <ul>
-                        <li><a href="#">Inspirasi</a></li>
-                        <li><a href="#">Pengetahuan</a></li>
-                        <li><a href="#">Kreativitas</a></li>
-                    </ul>
-                </aside>
-            </div>
+            <h1>Koleksi Buku</h1>
+            <p>Daftar lengkap koleksi buku saya.</p>
+            <!-- Tambahkan lebih banyak item buku di sini -->
         </section>
         
         <section id="tentang" class="tab-content">
-            <div class="content-wrapper">
-                <div class="main-content">
-                    <h1>Tentang Saya</h1>
-                    <p>Informasi tentang pemilik perpustakaan. Saya adalah pecinta buku yang ingin berbagi koleksi pribadi ini dengan dunia.</p>
-                </div>
-                <aside class="sidebar">
-                    <h3>Media Sosial</h3>
-                    <ul>
-                        <li><a href="#">Instagram</a></li>
-                        <li><a href="#">Twitter</a></li>
-                        <li><a href="#">LinkedIn</a></li>
-                    </ul>
-                </aside>
-            </div>
+            <h1>Tentang Saya</h1>
+            <p>Informasi tentang pemilik perpustakaan.</p>
         </section>
         
         <section id="kontak" class="tab-content">
-            <div class="content-wrapper">
-                <div class="main-content">
-                    <h1>Kontak</h1>
-                    <p>Hubungi saya melalui email: nadila@example.com atau media sosial.</p>
-                    <form>
-                        <input type="text" placeholder="Nama Anda">
-                        <input type="email" placeholder="Email">
-                        <textarea placeholder="Pesan"></textarea>
-                        <button type="submit">Kirim</button>
-                    </form>
-                </div>
-                <aside class="sidebar">
-                    <h3>Alamat</h3>
-                    <p>Jl. Contoh No. 123, Kota, Negara</p>
-                </aside>
-            </div>
+            <h1>Kontak</h1>
+            <p>Hubungi saya melalui email atau media sosial.</p>
         </section>
     </main>
-    
-    <footer>
-        <p>&copy; 2023 Nadila Ananda. Semua hak dilindungi.</p>
-    </footer>
     
     <script src="script.js"></script>
 </body>

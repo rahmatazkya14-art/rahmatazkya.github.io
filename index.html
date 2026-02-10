@@ -3,170 +3,150 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Perpustakaan Rahma Tazkya</title>
+    <title>Perpustakaan Rahma Tazkya </title>
     <style>
-        /* Palet warna perpustakaan: Netral, klasik, dengan aksen coklat untuk kesan hangat dan tenang */
+        /* Palet warna perpustakaan: Coklat tua, krem, hijau gelap, dan abu-abu untuk kesan klasik dan modern */
         body {
             font-family: 'Georgia', serif; /* Font klasik untuk perpustakaan */
             margin: 0;
             padding: 0;
-            background-color: #F5F5DC; /* Beige lembut */
-            color: #2F4F4F; /* Dark slate gray untuk teks utama */
+            background-color: #F5F5DC; /* Krem */
+            color: #2F4F4F; /* Hijau gelap */
             line-height: 1.6;
         }
-
         header {
+            background-color: #8B4513; /* Coklat tua */
+            color: #F5F5DC; /* Krem */
+            padding: 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background-color: #2F4F4F; /* Header gelap */
-            padding: 1rem 2rem;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
-
-        .owner-name {
-            font-size: 1.5rem;
+        header .owner-name {
+            font-size: 1.5em;
             font-weight: bold;
-            color: #F5F5DC; /* Kontras dengan header */
         }
-
         nav {
             display: flex;
-            gap: 1rem;
+            gap: 20px;
         }
-
-        .nav-btn {
-            background-color: transparent;
-            border: none;
+        nav a {
             color: #F5F5DC;
-            padding: 0.5rem 1rem;
-            cursor: pointer;
+            text-decoration: none;
+            padding: 10px 15px;
             border-radius: 5px;
-            transition: background-color 0.3s ease, transform 0.2s ease; /* Hover interaktif */
+            transition: background-color 0.3s ease, transform 0.2s ease; /* Interaktif modern */
         }
-
-        .nav-btn:hover {
-            background-color: #8B4513; /* Saddle brown aksen */
-            transform: scale(1.05);
+        nav a:hover {
+            background-color: #A0522D; /* Coklat lebih terang */
+            transform: scale(1.05); /* Efek hover */
         }
-
-        .nav-btn.active {
-            background-color: #8B4513;
-        }
-
-        main {
-            padding: 2rem;
+        section {
+            padding: 40px;
             max-width: 1200px;
             margin: 0 auto;
         }
-
-        .tab-content {
-            display: none;
-        }
-
-        .tab-content.active {
-            display: block;
-        }
-
-        h1, h2, h3 {
-            color: #2F4F4F;
-        }
-
-        .book-grid {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
-        .book-item {
-            background-color: #ECF0F1; /* Light gray untuk kartu */
-            border-radius: 8px;
-            padding: 1rem;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        #beranda {
             text-align: center;
-            transition: transform 0.3s ease; /* Animasi modern */
-            width: 200px;
         }
-
-        .book-item:hover {
-            transform: translateY(-5px);
+        #beranda h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
         }
-
-        .book-item img {
+        #beranda p {
+            font-size: 1.2em;
+            margin-bottom: 40px;
+        }
+        .highlight {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .highlight-item {
+            background-color: #FFF8DC; /* Krem muda */
+            border: 1px solid #D2B48C; /* Tan */
+            border-radius: 10px;
+            padding: 20px;
+            width: 250px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: box-shadow 0.3s ease;
+        }
+        .highlight-item:hover {
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2); /* Interaktif */
+        }
+        .highlight-item img {
             width: 100%;
             height: 150px;
             object-fit: cover;
             border-radius: 5px;
+            margin-bottom: 10px;
         }
-
-        /* Responsif untuk mobile */
-        @media (max-width: 768px) {
-            header {
-                flex-direction: column;
-                text-align: center;
-            }
-            nav {
-                margin-top: 1rem;
-            }
-            .book-grid {
-                flex-direction: column;
-                align-items: center;
-            }
+        #koleksi, #tentang, #kontak {
+            display: none; /* Sembunyikan sections lain secara default, tampilkan saat diklik */
+        }
+        #koleksi:target, #tentang:target, #kontak:target {
+            display: block;
+        }
+        #koleksi:target ~ #beranda, #tentang:target ~ #beranda, #kontak:target ~ #beranda {
+            display: none;
+        }
+        /* Untuk membuat navigasi ke sections */
+        nav a[href="#beranda"] {
+            background-color: #A0522D; /* Aktif untuk Beranda */
         }
     </style>
 </head>
 <body>
     <header>
-        <div class="owner-name">Rahma Tazkya</div>
+        <div class="owner-name">Perpustakaan Rahma Tazkya</div>
         <nav>
-            <button class="nav-btn active" data-tab="beranda">Beranda</button>
-            <button class="nav-btn" data-tab="koleksi">Koleksi</button>
-            <button class="nav-btn" data-tab="tentang">Tentang</button>
-            <button class="nav-btn" data-tab="kontak">Kontak</button>
+            <a href="#beranda">Beranda</a>
+            <a href="#koleksi">Koleksi</a>
+            <a href="#tentang">Tentang</a>
+            <a href="#kontak">Kontak</a>
         </nav>
     </header>
-    
-    <main>
-        <section id="beranda" class="tab-content active">
-            <h1>Selamat Datang di Perpustakaan Rahma Tazkya</h1>
-            <p>Deskripsi website: Ini adalah perpustakaan pribadi yang berisi koleksi buku favorit saya. Temukan inspirasi dan pengetahuan di sini.</p>
-            <div class="highlight">
-                <h2>Koleksi</h2>
-                <div class="book-grid">
-                    <div class="book-item">
-                        <img src="placeholder-book1.jpg" alt="Buku 1">
-                        <h2>E-Book</h2>
-                    </div>
-                    <div class="book-item">
-                        <img src="placeholder-book2.jpg" alt="Buku 2">
-                        <h2>E-Journal</h2>
-                    </div>
-                    <div class="book-item">
-                        <img src="placeholder-book3.jpg" alt="Buku 3">
-                        <h2>Skripsi</h2>
-                    </div>
-                </div>
+
+    <section id="beranda">
+        <h1>Selamat Datang di Perpustakaan Rahma Tazkya</h1>
+        <p>Perpustakaan ini adalah koleksi pribadi saya yang berisi berbagai buku klasik, novel, dan referensi. Dibuat untuk berbagi pengetahuan dengan publik. Jelajahi koleksi kami dan temukan bacaan favorit Anda!</p>
+        
+        <div class="highlight">
+            <div class="highlight-item">
+                <img src="https://via.placeholder.com/250x150?text=Buku+1" alt="Buku Klasik">
+                <h3>Buku Klasik</h3>
+                <p>Koleksi buku-buku klasik dari berbagai era.</p>
             </div>
-        </section>
-        
-        <section id="koleksi" class="tab-content">
-            <h1>Koleksi Buku</h1>
-            <p>Daftar lengkap koleksi buku saya.</p>
-            <!-- Tambahkan lebih banyak item buku di sini -->
-        </section>
-        
-        <section id="tentang" class="tab-content">
-            <h1>Tentang Saya</h1>
-            <p>Informasi tentang pemilik perpustakaan.</p>
-        </section>
-        
-        <section id="kontak" class="tab-content">
-            <h1>Kontak</h1>
-            <p>Hubungi saya melalui email atau media sosial.</p>
-        </section>
-    </main>
-    
-    <script src="script.js"></script>
+            <div class="highlight-item">
+                <img src="https://via.placeholder.com/250x150?text=Buku+2" alt="Novel Modern">
+                <h3>Novel Modern</h3>
+                <p>Novel-novel terbaru dari penulis kontemporer.</p>
+            </div>
+            <div class="highlight-item">
+                <img src="https://via.placeholder.com/250x150?text=Buku+3" alt="Referensi">
+                <h3>Referensi</h3>
+                <p>Buku-buku referensi untuk penelitian dan pendidikan.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="koleksi">
+        <h2>Koleksi Buku</h2>
+        <p>Di sini Anda dapat melihat daftar lengkap koleksi buku kami. (Konten placeholder - bisa dikembangkan lebih lanjut)</p>
+        <!-- Tambahkan daftar buku di sini -->
+    </section>
+
+    <section id="tentang">
+        <h2>Tentang Kami</h2>
+        <p>Perpustakaan ini didirikan oleh Rahma Tazkya untuk membagikan passion membaca. Kami berkomitmen untuk menyediakan akses gratis ke pengetahuan.</p>
+    </section>
+
+    <section id="kontak">
+        <h2>Kontak</h2>
+        <p>Hubungi kami di email: rahmatazkya14@gmail.com atau telepon: 081947654882</p>
+    </section>
 </body>
 </html>

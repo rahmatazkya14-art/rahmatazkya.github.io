@@ -1,15 +1,199 @@
 <!DOCTYPE html>
-<html>
-<head lang="id">
+<html lang="id">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Halaman Utama</title>
+    <title>Perpustakaan Rahma Tazkya</title>
+    <style>
+        /* Palet warna perpustakaan: Coklat tua, krem, hijau gelap, dan abu-abu */
+        body {
+            font-family: 'Georgia', serif;
+            margin: 0;
+            padding: 0;
+            background-color: #F5F5DC; /* krem */
+            color: #2F4F4F; /* hijau gelap */
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #8B4513; /* coklat tua */
+            color: #F5F5DC;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        header .owner-name {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        nav {
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+            color: #F5F5DC;
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        nav a:hover {
+            background-color: #A0522D;
+            transform: scale(1.05);
+        }
+
+        section {
+            padding: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        #beranda {
+            text-align: center;
+        }
+
+        #beranda h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        #beranda p {
+            font-size: 1.2em;
+            margin-bottom: 40px;
+        }
+
+        .highlight {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .highlight-item {
+            background-color: #FFF8DC;
+            border: 1px solid #D2B48C;
+            border-radius: 10px;
+            padding: 20px;
+            width: 250px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: box-shadow 0.3s ease;
+        }
+
+        .highlight-item:hover {
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        }
+
+        .highlight-item img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        #koleksi, #tentang, #kontak {
+            display: none;
+        }
+
+        #koleksi:target, #tentang:target, #kontak:target {
+            display: block;
+        }
+
+        #koleksi:target ~ #beranda,
+        #tentang:target ~ #beranda,
+        #kontak:target ~ #beranda {
+            display: none;
+        }
+
+        /* Footer Identitas Pembuat Website */
+        footer {
+            background-color: #8B4513;
+            color: #F5F5DC;
+            text-align: center;
+            padding: 20px;
+            margin-top: 50px;
+        }
+
+        footer a {
+            color: #FFF8DC;
+            text-decoration: none;
+            margin: 0 10px;
+            padding: 8px 12px;
+            border-radius: 5px;
+            background-color: #A0522D;
+            transition: 0.3s;
+        }
+
+        footer a:hover {
+            background-color: #D2B48C;
+            color: #2F4F4F;
+        }
+    </style>
 </head>
 <body>
 
-<a href="cv.html">Lihat Curriculum Vitae</a>
-<a href="https://www.youtube.com/watch?si=USm_IQA-s8m9xEPs&v=jGyYuQf-GeE&feature=youtu.be">Video Youtube</a>
+<header>
+    <div class="owner-name">Perpustakaan Rahma Tazkya</div>
+    <nav>
+        <a href="#beranda">Beranda</a>
+        <a href="#koleksi">Koleksi</a>
+        <a href="#tentang">Tentang</a>
+        <a href="#kontak">Kontak</a>
+    </nav>
+</header>
+
+<section id="beranda">
+    <h1>Selamat Datang di Perpustakaan Rahma Tazkya</h1>
+    <p>Perpustakaan pribadi untuk berbagi pengetahuan, koleksi buku klasik, novel, dan referensi akademik.</p>
+
+    <div class="highlight">
+        <div class="highlight-item">
+            <img src="https://via.placeholder.com/250x150?text=Buku+1" alt="Buku Klasik">
+            <h3>Buku Klasik</h3>
+            <p>Koleksi buku klasik dari berbagai era.</p>
+        </div>
+        <div class="highlight-item">
+            <img src="https://via.placeholder.com/250x150?text=Buku+2" alt="Novel Modern">
+            <h3>Novel Modern</h3>
+            <p>Novel modern dan populer.</p>
+        </div>
+        <div class="highlight-item">
+            <img src="https://via.placeholder.com/250x150?text=Buku+3" alt="Referensi Akademik">
+            <h3>Referensi Akademik</h3>
+            <p>Buku referensi untuk penelitian dan tugas akademik.</p>
+        </div>
+    </div>
+</section>
+
+<section id="koleksi">
+    <h2>Koleksi Buku</h2>
+    <p>Daftar koleksi buku akan ditampilkan di sini.</p>
+</section>
+
+<section id="tentang">
+    <h2>Tentang Kami</h2>
+    <p>Perpustakaan ini dibuat oleh Rahma Tazkya sebagai perpustakaan personal dan media berbagi ilmu.</p>
+</section>
+
+<section id="kontak">
+    <h2>Kontak</h2>
+    <p>Email: rahmatazkya14@gmail.com<br>Telepon: 081947654882</p>
+</section>
+
+<!-- FOOTER IDENTITAS PEMBUAT WEBSITE -->
+<footer>
+    <p><b>Identitas Pembuat Website</b></p>
+    <p>Rahma Tazkya</p>
+    <a href="cv.html">Curriculum Vitae</a>
+    <a href="https://www.youtube.com/watch?si=USm_IQA-s8m9xEPs&v=jGyYuQf-GeE&feature=youtu.be" target="_blank">Video YouTube</a>
+</footer>
 
 </body>
 </html>
-      

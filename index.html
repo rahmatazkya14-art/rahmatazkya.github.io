@@ -4,19 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perpustakaan Rahma Tazkya</title>
+
     <style>
-        /* Palet warna perpustakaan: Coklat tua, krem, hijau gelap, dan abu-abu */
         body {
             font-family: 'Georgia', serif;
             margin: 0;
             padding: 0;
-            background-color: #F5F5DC; /* krem */
-            color: #2F4F4F; /* hijau gelap */
+            background-color: #F5F5DC;
+            color: #2F4F4F;
             line-height: 1.6;
         }
 
         header {
-            background-color: #8B4513; /* coklat tua */
+            background-color: #8B4513;
             color: #F5F5DC;
             padding: 20px;
             display: flex;
@@ -40,7 +40,7 @@
             text-decoration: none;
             padding: 10px 15px;
             border-radius: 5px;
-            transition: background-color 0.3s ease, transform 0.2s ease;
+            transition: 0.3s;
         }
 
         nav a:hover {
@@ -51,26 +51,16 @@
         section {
             padding: 40px;
             max-width: 1200px;
-            margin: 0 auto;
+            margin: auto;
         }
 
         #beranda {
             text-align: center;
         }
 
-        #beranda h1 {
-            font-size: 2.5em;
-            margin-bottom: 20px;
-        }
-
-        #beranda p {
-            font-size: 1.2em;
-            margin-bottom: 40px;
-        }
-
         .highlight {
             display: flex;
-            justify-content: space-around;
+            justify-content: center;
             flex-wrap: wrap;
             gap: 20px;
         }
@@ -83,11 +73,6 @@
             width: 250px;
             text-align: center;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            transition: box-shadow 0.3s ease;
-        }
-
-        .highlight-item:hover {
-            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
         }
 
         .highlight-item img {
@@ -95,24 +80,26 @@
             height: 150px;
             object-fit: cover;
             border-radius: 5px;
-            margin-bottom: 10px;
         }
 
-        #koleksi, #tentang, #kontak {
-            display: none;
+        /* Section Media */
+        .media-box {
+            background-color: #FFF8DC;
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid #D2B48C;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            text-align: center;
         }
 
-        #koleksi:target, #tentang:target, #kontak:target {
-            display: block;
+        audio, video {
+            width: 100%;
+            max-width: 500px;
+            margin: 15px 0;
+            border-radius: 10px;
+            border: 2px solid #8B4513;
         }
 
-        #koleksi:target ~ #beranda,
-        #tentang:target ~ #beranda,
-        #kontak:target ~ #beranda {
-            display: none;
-        }
-
-        /* Footer Identitas Pembuat Website */
         footer {
             background-color: #8B4513;
             color: #F5F5DC;
@@ -125,9 +112,9 @@
             color: #FFF8DC;
             text-decoration: none;
             margin: 0 10px;
+            background-color: #A0522D;
             padding: 8px 12px;
             border-radius: 5px;
-            background-color: #A0522D;
             transition: 0.3s;
         }
 
@@ -137,6 +124,7 @@
         }
     </style>
 </head>
+
 <body>
 
 <header>
@@ -145,29 +133,32 @@
         <a href="#beranda">Beranda</a>
         <a href="#koleksi">Koleksi</a>
         <a href="#tentang">Tentang</a>
+        <a href="#media">Media</a>
         <a href="#kontak">Kontak</a>
     </nav>
 </header>
 
 <section id="beranda">
     <h1>Selamat Datang di Perpustakaan Rahma Tazkya</h1>
-    <p>Perpustakaan pribadi untuk berbagi pengetahuan, koleksi buku klasik, novel, dan referensi akademik.</p>
+    <p>Perpustakaan personal untuk berbagi pengetahuan dan koleksi buku.</p>
 
     <div class="highlight">
         <div class="highlight-item">
-            <img src="https://via.placeholder.com/250x150?text=Buku+1" alt="Buku Klasik">
+            <img src="https://via.placeholder.com/250x150?text=Buku+1">
             <h3>Buku Klasik</h3>
-            <p>Koleksi buku klasik dari berbagai era.</p>
+            <p>Koleksi buku klasik.</p>
         </div>
+
         <div class="highlight-item">
-            <img src="https://via.placeholder.com/250x150?text=Buku+2" alt="Novel Modern">
+            <img src="https://via.placeholder.com/250x150?text=Buku+2">
             <h3>Novel Modern</h3>
-            <p>Novel modern dan populer.</p>
+            <p>Novel terbaru dan populer.</p>
         </div>
+
         <div class="highlight-item">
-            <img src="https://via.placeholder.com/250x150?text=Buku+3" alt="Referensi Akademik">
-            <h3>Referensi Akademik</h3>
-            <p>Buku referensi untuk penelitian dan tugas akademik.</p>
+            <img src="https://via.placeholder.com/250x150?text=Buku+3">
+            <h3>Referensi</h3>
+            <p>Buku referensi akademik.</p>
         </div>
     </div>
 </section>
@@ -179,20 +170,40 @@
 
 <section id="tentang">
     <h2>Tentang Kami</h2>
-    <p>Perpustakaan ini dibuat oleh Rahma Tazkya sebagai perpustakaan personal dan media berbagi ilmu.</p>
+    <p>Website perpustakaan personal dibuat oleh Rahma Tazkya.</p>
+</section>
+
+<!-- SECTION AUDIO & VIDEO -->
+<section id="media">
+    <h2>Audio dan Video Koleksi</h2>
+
+    <div class="media-box">
+        <h3>Audio Koleksi</h3>
+        <audio controls>
+            <source src="Audio_Exile.mp3" type="audio/mp3">
+            Browser Anda tidak mendukung audio.
+        </audio>
+
+        <h3>Video Koleksi</h3>
+        <video controls>
+            <source src="Video_Exile.mp4" type="video/mp4">
+            Browser Anda tidak mendukung video.
+        </video>
+    </div>
 </section>
 
 <section id="kontak">
     <h2>Kontak</h2>
-    <p>Email: rahmatazkya14@gmail.com<br>Telepon: 081947654882</p>
+    <p>Email: rahmatazkya14@gmail.com<br>
+       Telepon: 081947654882</p>
 </section>
 
-<!-- FOOTER IDENTITAS PEMBUAT WEBSITE -->
+<!-- FOOTER IDENTITAS -->
 <footer>
     <p><b>Identitas Pembuat Website</b></p>
     <p>Rahma Tazkya</p>
     <a href="cv.html">Curriculum Vitae</a>
-    <a href="https://www.youtube.com/watch?si=USm_IQA-s8m9xEPs&v=jGyYuQf-GeE&feature=youtu.be" target="_blank">Video YouTube</a>
+    <a href="https://www.youtube.com/watch?si=USm_IQA-s8m9xEPs&v=jGyYuQf-GeE&feature=youtu.be" target="_blank">YouTube</a>
 </footer>
 
 </body>

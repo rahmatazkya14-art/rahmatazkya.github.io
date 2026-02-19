@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="id">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Login Perpustakaan Rahma Tazkya</title>
+
+		<style>
+			body{
+				font-family:'Georgia', serif;
+				margin:0;
+				background: linear-gradient(120deg,#8B4513,#D2B48C);
+				height:100vh;
+				display:flex;
+				justify-content:center;
+				align-items:center;
+			}
+
+			/* Tombol kembali */
+			.back{
+				position:absolute;
+				top:20px;
+				left:20px;
+				font-size:28px;
+				text-decoration:none;
+				color:white;
+				transition:0.3s;
+			}
+			.back:hover{
+				transform:scale(1.3);
+			}
+
+			/* Glass box */
+			.container{
+				background:rgba(255,255,255,0.15);
+				backdrop-filter:blur(12px);
+				padding:40px;
+				border-radius:20px;
+				width:320px;
+				text-align:center;
+				box-shadow:0 8px 20px rgba(0,0,0,0.3);
+				color:white;
+			}
+
+			input{
+				width:100%;
+				padding:12px;
+				margin:10px 0;
+				border:none;
+				border-radius:10px;
+			}
+
+			button{
+				width:100%;
+				padding:12px;
+				margin-top:15px;
+				border:none;
+				border-radius:10px;
+				background:#8B4513;
+				color:white;
+				font-weight:bold;
+				cursor:pointer;
+				transition:0.3s;
+			}
+			button:hover{
+				background:#A0522D;
+				transform:scale(1.05);
+			}
+
+			.register{
+				margin-top:15px;
+				display:block;
+				color:white;
+				text-decoration:none;
+				transition:0.3s;
+			}
+			.register:hover{
+				text-decoration:underline;
+				transform:scale(1.05);
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<a href="index_tes.html" class="back">⬅</a>
+
+		<div class="container">
+			<h2>Login</h2>
+
+			<input type="text" placeholder="Nama Pengguna">
+			<input type="password" placeholder="Password">
+
+			<button>Login</button>
+
+			<a href="daftar.html" class="register">Belum punya akun? Daftar</a>
+		</div>
+
+	</body>
+</html>

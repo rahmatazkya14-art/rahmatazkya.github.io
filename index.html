@@ -45,7 +45,7 @@
 
         nav a:hover {
             background-color: #A0522D;
-            transform: scale(1.05);
+            transform: scale(1.08);
         }
 
         section {
@@ -73,6 +73,12 @@
             width: 250px;
             text-align: center;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: 0.3s;
+        }
+
+        .highlight-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.2);
         }
 
         .highlight-item img {
@@ -82,7 +88,6 @@
             border-radius: 5px;
         }
 
-        /* Section Media */
         .media-box {
             background-color: #FFF8DC;
             padding: 20px;
@@ -104,16 +109,16 @@
             background-color: #8B4513;
             color: #F5F5DC;
             text-align: center;
-            padding: 20px;
+            padding: 30px;
             margin-top: 50px;
         }
 
         footer a {
             color: #FFF8DC;
             text-decoration: none;
-            margin: 0 10px;
+            margin: 5px;
             background-color: #A0522D;
-            padding: 8px 12px;
+            padding: 6px 10px;
             border-radius: 5px;
             transition: 0.3s;
         }
@@ -121,6 +126,28 @@
         footer a:hover {
             background-color: #D2B48C;
             color: #2F4F4F;
+        }
+
+        /* Tombol Feedback */
+        .feedback-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #8B4513;
+            color: white;
+            padding: 15px 18px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            transition: 0.3s;
+            z-index: 999;
+        }
+
+        .feedback-btn:hover {
+            background-color: #A0522D;
+            transform: scale(1.15) rotate(-3deg);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.4);
         }
     </style>
 </head>
@@ -132,9 +159,9 @@
     <nav>
         <a href="#beranda">Beranda</a>
         <a href="#koleksi">Koleksi</a>
-        <a href="#tentang">Tentang</a>
         <a href="#media">Media</a>
-        <a href="#kontak">Kontak</a>
+        <a href="login.html" target="_blank">Login</a>
+        <a href="daftar.html" target="_blank">Daftar</a>
     </nav>
 </header>
 
@@ -168,12 +195,6 @@
     <p>Daftar koleksi buku akan ditampilkan di sini.</p>
 </section>
 
-<section id="tentang">
-    <h2>Tentang Kami</h2>
-    <p>Website perpustakaan personal dibuat oleh Rahma Tazkya.</p>
-</section>
-
-<!-- SECTION AUDIO & VIDEO -->
 <section id="media">
     <h2>Audio dan Video Koleksi</h2>
 
@@ -192,19 +213,22 @@
     </div>
 </section>
 
-<section id="kontak">
-    <h2>Kontak</h2>
-    <p>Email: rahmatazkya14@gmail.com<br>
-       Telepon: 081947654882</p>
-</section>
-
-<!-- FOOTER IDENTITAS -->
 <footer>
-    <p><b>Identitas Pembuat Website</b></p>
-    <p>Rahma Tazkya</p>
+
+    <h3>Tentang</h3>
+    <p>Pemilik Website: Rahma Tazkya</p>
     <a href="cv.html">Curriculum Vitae</a>
     <a href="https://www.youtube.com/watch?si=USm_IQA-s8m9xEPs&v=jGyYuQf-GeE&feature=youtu.be" target="_blank">YouTube</a>
+
+    <h3>Kontak</h3>
+    <p>Alamat: Medan, Sumatera Utara</p>
+    <a href="https://instagram.com/" target="_blank">Instagram</a><br>
+    Email: rahmatazkya14@gmail.com<br>
+    Telepon: 081947654882
+
 </footer>
+
+<a href="feedback.html" class="feedback-btn">Feedback</a>
 
 </body>
 </html>

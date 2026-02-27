@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tentang Kami | KyLib</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .about-wrapper {
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+        .welcome-section {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+            line-height: 1.8;
+            position: relative;
+        }
+        .welcome-section i.quote-icon {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 40px;
+            color: #eef2ff;
+        }
+        .welcome-text h2 {
+            color: #2d4de0;
+            margin-bottom: 20px;
+            font-family: 'Playfair Display', serif;
+        }
+        .vision-mission-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin-bottom: 60px;
+        }
+        .vm-box {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            border-left: 5px solid #2d4de0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        .vm-box h3 {
+            margin-bottom: 15px;
+            color: #1f2a44;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .vm-list { list-style: none; }
+        .vm-list li {
+            margin-bottom: 12px;
+            display: flex;
+            gap: 10px;
+            font-size: 15px;
+        }
+        .vm-list li i { color: #2d4de0; margin-top: 5px; }
+
+        @media (max-width: 768px) {
+            .vision-mission-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo">
+        <img src="img/kylib-logo.png" alt="Logo KyLib">
+        <h2>KyLib</h2>
+    </div>
+
+    <nav class="nav-center">
+        <a href="index.html">Beranda</a>
+        <a href="koleksi.html" target="_blank">Koleksi</a>
+        <a href="index.html#artikel">Artikel Ilmu</a>
+        <a href="index.html#video">Video Lab</a>
+        <a href="tentang-kami.html">Tentang Kami</a>
+        <a href="index.html#founder">Founder</a>
+    </nav>
+
+    <div class="auth">
+        <a href="daftar.html" class="btn-daftar">Daftar</a>
+        <a href="login.html" class="btn-login">Login</a>
+    </div>
+</header>
+
+<section class="about-wrapper">
+    <div class="welcome-section">
+        <i class="fa-solid fa-quote-right quote-icon"></i>
+        <div class="welcome-text">
+            <h2>Halo, Selamat Datang di Perpustakaan Rahma Tazkya</h2>
+            <p>
+                Aku biasa dipanggil dengan nama <b>Kiya</b>. Maka dari itu, perpustakaan digital ini aku namakan sebagai <b>KyLib</b>, yang merupakan singkatan dari <b>Kiya Library</b>. 
+            </p>
+            <p style="margin-top: 15px;">
+                KyLib lahir dari sebuah mimpi sederhana: ingin menyediakan ruang belajar yang nyaman, modern, dan tidak membosankan bagi adik-adik pejuang PTN. Sebagai mahasiswa Ilmu Perpustakaan, saya melihat banyak sekali sumber daya ilmu yang berharga namun seringkali sulit diakses atau disajikan dengan cara yang kaku. Melalui KyLib, saya ingin mengubah pandangan itu.
+            </p>
+            <p style="margin-top: 15px;">
+                Di sini, KyLib bukan sekadar gudang buku digital. Ini adalah tempat di mana teks, visual, dan teknologi bertemu untuk membantumu melampaui batasan diri. Harapan saya, setiap klik yang kamu lakukan di platform ini membawamu selangkah lebih dekat menuju cita-cita yang kamu impikan.
+            </p>
+            <p style="margin-top: 15px; font-weight: 600; color: #2d4de0;">
+                Mari berproses bersama di Kiya Library—karena belajar cerdas adalah kunci untuk membuka pintu masa depan.
+            </p>
+        </div>
+    </div>
+
+    <div class="vision-mission-grid">
+        <div class="vm-box">
+            <h3><i class="fa-solid fa-eye"></i> Visi Kami</h3>
+            <ul class="vm-list">
+                <li><i class="fa-solid fa-circle-check"></i> <span>Menjadi pelopor perpustakaan digital interaktif nomor satu di Indonesia.</span></li>
+                <li><i class="fa-solid fa-circle-check"></i> <span>Membangun ekosistem belajar mandiri yang inklusif untuk pejuang PTN.</span></li>
+                <li><i class="fa-solid fa-circle-check"></i> <span>Menciptakan standar baru penyajian materi edukasi yang estetik dan modern.</span></li>
+            </ul>
+        </div>
+
+        <div class="vm-box">
+            <h3><i class="fa-solid fa-bullseye"></i> Misi Kami</h3>
+            <ul class="vm-list">
+                <li><i class="fa-solid fa-rocket"></i> <span>Menyediakan ribuan koleksi buku digital dan panduan belajar terkurasi.</span></li>
+                <li><i class="fa-solid fa-rocket"></i> <span>Menghadirkan Video Lab untuk mempermudah pemahaman materi sains.</span></li>
+                <li><i class="fa-solid fa-rocket"></i> <span>Mengoptimalkan UX melalui desain antarmuka yang bersih dan intuitif.</span></li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="footer-container">
+        <div class="footer-box">
+            <h3>KyLib</h3>
+            <p>Pusat literasi digital yang mengintegrasikan video edukasi <br> dan koleksi buku untuk masa depan siswa SMA yang lebih cerah.</p>
+        </div>
+        <div class="footer-box">
+            <h3>Kontak</h3>
+            <p><i class="fa-solid fa-location-dot"></i> Medan, Sumatera Utara</p>
+            <a href="mailto:rahmatazkya14@gmail.com" class="email-link"><i class="fa-solid fa-envelope"></i> rahmatazkya14@gmail</a>
+        </div>
+    </div>
+    <div class="footer-copyright">
+        © <span id="year"></span> KyLib – Perpustakaan Digital oleh Rahma Tazkya.
+    </div>
+</footer>
+
+<script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Koleksi Perpustakaan | KyLib</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Kustomisasi khusus untuk halaman koleksi */
+        .collection-container {
+            padding: 40px 50px;
+        }
+        .category-title {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+            color: #1f2a44;
+            border-left: 5px solid #2d4de0;
+            padding-left: 15px;
+        }
+        .book-author {
+            font-size: 13px;
+            color: #666;
+            padding: 0 15px 15px;
+            display: block;
+        }
+        .collection-section {
+            margin-bottom: 50px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo">
+        <img src="img/kylib-logo.png" alt="Logo KyLib">
+        <h2>KyLib</h2>
+    </div>
+
+    <nav class="nav-center">
+        <a href="index.html">Beranda</a>
+        <a href="koleksi.html">Koleksi</a>
+        <a href="index.html#artikel">Artikel Ilmu</a>
+        <a href="index.html#video">Video Lab</a>
+        <a href="tentang-kami.html">Tentang Kami</a>
+        <a href="index.html#founder">Founder</a>
+    </nav>
+
+    <div class="auth">
+        <a href="daftar.html" class="btn-daftar">Daftar</a>
+        <a href="login.html" class="btn-login">Login</a>
+    </div>
+</header>
+
+<main class="collection-container">
+
+    <section class="collection-section">
+        <div class="category-title">
+            <i class="fa-solid fa-flask-vial" style="color: #2d4de0; font-size: 24px;"></i>
+            <h2>Koleksi E-Book: Sains & Teknologi</h2>
+        </div>
+
+        <div class="horizontal-scroll">
+            <div class="card">
+                <img src="img/buku-fisika.jpg" alt="Cover Buku">
+                <h3>Fisika Dasar Dasar</h3>
+                <span class="book-author">Penulis: Halliday & Resnick</span>
+            </div>
+            <div class="card">
+                <img src="img/buku-kimia.jpg" alt="Cover Buku">
+                <h3>Kimia Organik Modern</h3>
+                <span class="book-author">Penulis: John McMurry</span>
+            </div>
+            <div class="card">
+                <img src="img/buku-bio.jpg" alt="Cover Buku">
+                <h3>Biologi Campbell</h3>
+                <span class="book-author">Penulis: Neil A. Campbell</span>
+            </div>
+            <div class="card">
+                <img src="img/buku-mat.jpg" alt="Cover Buku">
+                <h3>Kalkulus Jilid 1</h3>
+                <span class="book-author">Penulis: Dale Varberg</span>
+            </div>
+            <div class="card">
+                <img src="img/buku-it.jpg" alt="Cover Buku">
+                <h3>Algoritma Pemrograman</h3>
+                <span class="book-author">Penulis: Thomas H. Cormen</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="collection-section">
+        <div class="category-title">
+            <i class="fa-solid fa-gavel" style="color: #2d4de0; font-size: 24px;"></i>
+            <h2>Koleksi E-Book: Sosial & Humaniora</h2>
+        </div>
+
+        <div class="horizontal-scroll">
+            <div class="card">
+                <img src="img/buku-ekonomi.jpg" alt="Cover Buku">
+                <h3>Prinsip Ekonomi</h3>
+                <span class="book-author">Penulis: N. Gregory Mankiw</span>
+            </div>
+            <div class="card">
+                <img src="img/buku-sosiologi.jpg" alt="Cover Buku">
+                <h3>Sosiologi Kontemporer</h3>
+                <span class="book-author">Penulis: Anthony Giddens</span>
+            </div>
+            <div class="card">
+                <img src="img/buku-sejarah.jpg" alt="Cover Buku">
+                <h3>Sejarah Dunia Modern</h3>
+                <span class="book-author">Penulis: Robert Palmer</span>
+            </div>
+            <div class="card">
+                <img src="img/buku-geo.jpg" alt="Cover Buku">
+                <h3>Geografi Lingkungan</h3>
+                <span class="book-author">Penulis: William Marsh</span>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    <div class="footer-container">
+        <div class="footer-box">
+            <h3>KyLib</h3>
+            <p>Pusat literasi digital yang mengintegrasikan video edukasi dan koleksi buku untuk masa depan siswa SMA yang lebih cerah.</p>
+        </div>
+        <div class="footer-box">
+            <h3>Tentang Kami</h3>
+            <p><i class="fa-solid fa-location-dot"></i> Medan, Sumatera Utara</p>
+            <a href="mailto:rahmatazkya14@gmail.com" class="email-link">
+                <i class="fa-solid fa-envelope"></i> kylib@gmail.com
+            </a>
+        </div>
+    </div>
+    <div class="footer-copyright">
+        © <span id="year"></span> KyLib – Perpustakaan Digital oleh Rahma Tazkya.
+    </div>
+</footer>
+
+<script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>

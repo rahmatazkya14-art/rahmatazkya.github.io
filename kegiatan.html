@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Kegiatan | KyLib</title>
+
+    <link rel="icon" type="image/png" href="img/favicon.png">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+    <style>
+        .page-header {
+            text-align: center;
+            padding: 120px 20px 60px;
+            background: linear-gradient(135deg, #2d4de0, #1f2a44);
+            color: white;
+        }
+
+        .page-header h1 {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        .page-header p {
+            max-width: 700px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
+        .kegiatan-container {
+            padding: 80px 50px;
+            background: #f8faff;
+        }
+
+        .kegiatan-grid {
+			display: grid;
+			grid-template-columns: repeat(4, 1fr); /* 4 kolom = 1/4 halaman */
+			gap: 25px;
+		}
+
+        .kegiatan-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            transition: 0.3s;
+        }
+		
+		.kegiatan-card {
+			cursor: pointer;
+		}
+		
+		/* Tablet */
+		@media(max-width: 1024px) {
+			.kegiatan-grid {
+				grid-template-columns: repeat(2, 1fr);
+			}
+		}
+
+		/* Mobile */
+		@media(max-width: 600px) {
+			.kegiatan-grid {
+				grid-template-columns: 1fr;
+			}
+		}
+
+		.kegiatan-detail {
+			max-height: 0;
+			overflow: hidden;
+			transition: all 0.4s ease;
+			opacity: 0;
+		}
+
+		.kegiatan-card.active .kegiatan-detail {
+			max-height: 500px;
+			opacity: 1;
+			margin-top: 15px;
+		}
+
+		.kegiatan-detail p {
+			font-size: 14px;
+			line-height: 1.6;
+			color: #555;
+			margin-bottom: 10px;
+		}
+
+		.kegiatan-gallery {
+			display: flex;
+			gap: 10px;
+			margin-top: 10px;
+		}
+
+		.kegiatan-gallery img {
+			width: 100px;
+			height: 70px;
+			object-fit: cover;
+			border-radius: 8px;
+		}
+
+        .kegiatan-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .kegiatan-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .kegiatan-content {
+            padding: 20px;
+        }
+
+        .kegiatan-content h3 {
+            margin-bottom: 10px;
+            color: #2d4de0;
+        }
+
+        .kegiatan-meta {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .kegiatan-meta i {
+            margin-right: 8px;
+            color: #2d4de0;
+        }
+
+        .kegiatan-desc {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #444;
+        }
+
+        /* Upcoming Event */
+        .upcoming-section {
+            padding: 80px 50px;
+            background: white;
+        }
+
+        .upcoming-box {
+            background: linear-gradient(135deg, #2d4de0, #1f2a44);
+            color: white;
+            border-radius: 20px;
+            padding: 40px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        .upcoming-info {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .upcoming-info h2 {
+            margin-bottom: 15px;
+        }
+
+        .upcoming-info p {
+            margin-bottom: 10px;
+            opacity: 0.9;
+        }
+
+        .btn-daftar-event {
+            background: white;
+            color: #2d4de0;
+            padding: 12px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .btn-daftar-event:hover {
+            background: #e8edff;
+        }
+
+        @media(max-width: 768px) {
+            .kegiatan-container,
+            .upcoming-section {
+                padding: 60px 20px;
+            }
+
+            .page-header h1 {
+                font-size: 30px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">
+        <img src="img/kylib-logo.png" alt="Logo KyLib">
+        <h2>KyLib</h2>
+    </div>
+
+    <nav class="nav-center">
+        <a href="index.html">Beranda</a>
+        <a href="koleksi.html">Koleksi</a>
+        <a href="kegiatan.html" style="color:#2d4de0;">Kegiatan</a>
+        <a href="index.html#forum">Forum</a>
+        <a href="tentang-kami.html">Tentang Kami</a>
+        <a href="index.html#founder">Founder</a>
+    </nav>
+
+    <div class="auth">
+        <a href="daftar.html" class="btn-daftar">Daftar</a>
+        <a href="login.html" class="btn-login">Login</a>
+    </div>
+</header>
+
+<section class="page-header">
+    <h1>Kegiatan & Dokumentasi KyLib</h1>
+    <p>Berbagai acara literasi, promosi perpustakaan, dan kegiatan edukatif yang telah terlaksana sebagai bagian dari visi KyLib dalam membangun generasi cerdas.</p>
+</section>
+
+<section class="kegiatan-container">
+    <div class="kegiatan-grid">
+
+        <!-- Event 1 -->
+        <div class="kegiatan-card" onclick="toggleDetail(this)">
+    <img src="img/sosialisasi-umsu.jpeg" alt="Seminar Literasi Digital">
+    <div class="kegiatan-content">
+        <h3>Observasi Arsip Perpustakaan UMSU</h3>
+
+        <div class="kegiatan-meta">
+            <p><i class="fa-solid fa-calendar"></i> 21 September 2024 </p>
+            <p><i class="fa-solid fa-location-dot"></i> Perpustakaan UMSU</p>
+        </div>
+
+        <p class="kegiatan-desc">
+            Studi Praktik Manajemen Kearsipan dan Tata Kelola Informasi.
+        </p>
+
+        <!-- DETAIL PANJANG -->
+        <div class="kegiatan-detail">
+            <p>
+                Kegiatan observasi ini merupakan bagian dari penguatan kompetensi praktikal mahasiswa
+				Universitas Sumatera Utara (USU) dalam memahami dinamika pengelolaan arsip di instansi
+				pendidikan. Kunjungan ke Perpustakaan UMSU bertujuan untuk membedah sistem
+				dokumentasi, klasifikasi arsip, serta integrasi teknologi informasi yang diterapkan oleh salah
+				satu perpustakaan perguruan tinggi unggulan di Sumatera Utara.
+            </p>
+
+            <p>
+                Dalam rangkaian acara tersebut, dilakukan sesi diskusi dan tinjauan langsung terhadap alur
+				kerja administrasi perpustakaan. Mahasiswa mempelajari bagaimana teori-teori kearsipan yang
+				didapat di bangku kuliah diimplementasikan secara nyata untuk mendukung akreditasi dan
+				layanan informasi yang efektif.
+            </p>
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</section>
+
+<section class="upcoming-section">
+    <div class="upcoming-box">
+        <div class="upcoming-info">
+            <h2>📢 Pengumuman Acara Mendatang</h2>
+            <p><i class="fa-solid fa-calendar"></i> - </p>
+            <p><i class="fa-solid fa-location-dot"></i> - </p>
+            <p>
+                - 
+            </p>
+        </div>
+        <a href="#" class="btn-daftar-event">Belum Tersedia</a>
+    </div>
+</section>
+
+<footer>
+    <div class="footer-container">
+        <div class="footer-box">
+            <h3>KyLib</h3>
+            <p>Pusat literasi digital yang mengintegrasikan video edukasi untuk masa depan siswa yang lebih cerah.</p>
+        </div>
+        <div class="footer-box">
+            <h3>Kontak</h3>
+            <p><i class="fa-solid fa-location-dot"></i> Medan, Sumatera Utara</p>
+            <p><i class="fa-solid fa-phone"></i> 0819-4765-4882</p>
+            <p><i class="fa-solid fa-envelope"></i> rahmatazkya14@gmail.com</p>
+        </div>
+    </div>
+    <div class="footer-copyright">
+        © <span id="year"></span> KyLib – Perpustakaan Digital oleh Rahma Tazkya.
+    </div>
+</footer>
+
+<script>
+	function toggleDetail(card) {
+
+    // Tutup card lain jika ada yang terbuka
+    const allCards = document.querySelectorAll(".kegiatan-card");
+    allCards.forEach(item => {
+        if(item !== card) {
+            item.classList.remove("active");
+        }
+    });
+
+    // Toggle card yang diklik
+    card.classList.toggle("active");
+}
+    document.getElementById("year").textContent = new Date().getFullYear();
+	
+</script>
+
+</body>
+</html>

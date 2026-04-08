@@ -2,26 +2,175 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <title>Feedback Pengguna | KyLib</title>
+    <title>Feedback - KyLib</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+    <style>
+        .feedback-section {
+            padding: 140px 20px 80px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .feedback-container {
+            width: 100%;
+            max-width: 650px;
+            background: #fff;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+        }
+
+        .feedback-container h2 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .feedback-form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .feedback-form label {
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+
+        .feedback-form input,
+        .feedback-form textarea {
+            padding: 12px;
+            border-radius: 10px;
+            border: 1px solid #ddd;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+
+        .feedback-form textarea {
+            min-height: 130px;
+            resize: vertical;
+        }
+
+        .cta-feedback {
+            background: #2d4de0;
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .cta-feedback:hover {
+            background: #1f2a44;
+        }
+
+        .back-home {
+            margin-top: 15px;
+            background: #1f2a44;
+            color: white;
+            padding: 10px;
+            border-radius: 10px;
+            text-align: center;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .back-home:hover {
+            background: #111827;
+        }
+
+        .success-message {
+            display: none;
+            margin-top: 20px;
+            padding: 12px;
+            background: #e6f0ff;
+            color: #2d4de0;
+            border-radius: 10px;
+            text-align: center;
+            font-weight: 500;
+        }
+
+        @media(max-width:768px){
+            .feedback-container{
+                padding:25px;
+            }
+        }
+    </style>
 </head>
-<body class="auth-page">
 
-<a href="index.html" class="back-home">← Kembali ke Beranda</a>
+<body>
 
-<div class="auth-container">
-    <h2>Feedback Pengguna</h2>
-    <p>Masukan Anda sangat membantu pengembangan KyLib</p>
+<!-- ✅ NAVIGASI IDENTIK DENGAN INDEX -->
+<header>
+    <div class="logo">
+        <img src="img/kylib-logo.png" alt="Logo KyLib">
+        <h2>KyLib</h2>
+    </div>
 
-    <form>
-        <input type="text" placeholder="Nama Anda" required>
-        <input type="email" placeholder="Email Anda" required>
+    <nav class="nav-center">
+        <a href="index.html">Beranda</a>
+        <a href="koleksi.html">Koleksi</a>
+        <a href="kegiatan.html">Kegiatan</a>
+        <a href="index.html#forum">Forum</a>
+        <a href="tentang-kami.html">Tentang Kami</a>
+        <a href="index.html#founder">Founder</a>
+    </nav>
 
-        <textarea placeholder="Tuliskan kritik dan saran Anda..." rows="5" required></textarea>
+    <div class="auth">
+        <a href="daftar.html" class="btn-daftar">Daftar</a>
+        <a href="login.html" class="btn-login">Login</a>
+    </div>
+</header>
 
-        <button type="submit">Kirim Feedback</button>
-    </form>
-</div>
+
+<!-- SECTION FEEDBACK -->
+<section class="feedback-section">
+    <div class="feedback-container">
+        <h2>Formulir Feedback Pengguna</h2>
+
+        <form class="feedback-form" onsubmit="submitFeedback(event)">
+            
+            <label>Nama</label>
+            <input type="text" required>
+
+            <label>Email</label>
+            <input type="email" required>
+
+            <label>Saran / Masukan</label>
+            <textarea required></textarea>
+
+            <button type="submit" class="cta-feedback">
+                <i class="fa-solid fa-paper-plane"></i> Kirim Feedback
+            </button>
+
+            <div class="success-message" id="successMsg">
+                ✅ Feedback berhasil dikirim! Mengarahkan ke Beranda...
+            </div>
+
+            <div class="back-home" onclick="window.location.href='index.html'">
+                ⬅ Kembali ke Beranda
+            </div>
+
+        </form>
+    </div>
+</section>
+
+
+<script>
+function submitFeedback(event){
+    event.preventDefault();
+
+    document.getElementById("successMsg").style.display = "block";
+
+    setTimeout(function(){
+        window.location.href = "index.html";
+    }, 2500);
+}
+</script>
 
 </body>
 </html>

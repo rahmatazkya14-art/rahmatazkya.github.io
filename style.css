@@ -789,3 +789,38 @@ footer{
 .feedback-button:hover {
     transform: scale(1.1);
 }
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 200px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    top: 35px;
+    z-index: 999;
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 12px 15px;
+    color: #333;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.dropdown-content a:hover {
+    background: #f3f6ff;
+    color: #2d4de0;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}

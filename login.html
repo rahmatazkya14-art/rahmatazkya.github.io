@@ -12,7 +12,7 @@
 <div class="auth-container">
     <h2>Login KyLib</h2>
 
-    <form>
+    <form onsubmit="loginUser(event)">
         <input type="text" placeholder="Username" required>
         <input type="password" placeholder="Password" required>
 
@@ -22,5 +22,31 @@
     <p>Belum punya akun? <a href="daftar.html">Daftar di sini</a></p>
 </div>
 
+<script>
+document.querySelector("form").addEventListener("submit", function(e){
+    e.preventDefault();
+
+    const username = document.querySelector("input[placeholder='Username']").value;
+    const password = document.querySelector("input[placeholder='Password']").value;
+
+    const userData = JSON.parse(localStorage.getItem("userData"));
+
+    if(!userData){
+        alert("Belum ada akun terdaftar!");
+        return;
+    }
+
+    if(userData.username === username && userData.password === password){
+
+        // simpan status login
+        localStorage.setItem("userLogin", JSON.stringify(userData));
+
+        window.location.href = "dashboard-user.html";
+
+    } else {
+        alert("Username atau password salah!");
+    }
+});
+</script>
 </body>
 </html>

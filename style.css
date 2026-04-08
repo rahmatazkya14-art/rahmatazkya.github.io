@@ -769,3 +769,23 @@ footer{
     padding: 10px 15px;
     cursor: pointer;
 }
+
+.feedback-button {
+    position: fixed;
+    bottom: 90px; /* di atas chatbot */
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #3b82f6; /* warna sama */
+    color: white;
+    border: none;
+    font-size: 22px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+
+.feedback-button:hover {
+    transform: scale(1.1);
+}
